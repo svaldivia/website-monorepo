@@ -1,0 +1,21 @@
+{
+  "name": "sosoromeo-website",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^4.0.0",
+    "astro": "^2.9.7",
+    "clsx": "^2.0.0",
+    "tailwindcss": "^3.0.24"
+  },
+  "devDependencies": {
+    "prettier-plugin-tailwindcss": "^0.5.4"
+  }
+}

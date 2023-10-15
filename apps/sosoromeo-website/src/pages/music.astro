@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/PageLayout.astro';
+
+const musicVideoIds = ['TBHLFRdzr-k', 'Da7h1DdEOr0', 'DVBT7JVEy9c', 'JFJlmPYnp0k'];
+
+---
+
+<Layout title="Music">
+  <main class="flex flex-col items-center gap-6 w-full sm:w-[800px] m-auto">
+    <iframe
+      class="w-full h-96"
+      src="https://open.spotify.com/embed/artist/1SmWeenBrsUkSEaz1KSzjG?utm_source=generator"
+      allowtransparency="true"
+      allow="encrypted-media"
+    />
+    {musicVideoIds.map((id) =>
+      <iframe
+        class="w-full h-96 rounded-xl"
+        src={`https://www.youtube.com/embed/${id}`}
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      />
+    )}
+	</main>
+</Layout>

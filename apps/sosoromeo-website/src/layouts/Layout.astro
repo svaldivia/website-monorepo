@@ -1,0 +1,52 @@
+---
+import clsx from 'clsx';
+
+type Props = {
+	title: string;
+}
+
+const { title } = Astro.props;
+const { pathname } = Astro.url;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description">
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{`SOSOROMEO | ${title}`}</title>
+	</head>
+	<body class="text-slate-950 bg-gradient-to-b bg-red-300 flex flex-col min-h-screen">
+    <nav class="fixed top-0 w-full flex justify-center gap-5 font-bold text-3xl py-4 bg-red-300">
+      <a href="/" class={clsx('hover:underline', {'underline': pathname === '/'})}>HOME</a>
+      <a href="/music" class={clsx('hover:underline', {'underline': pathname === '/music'})}>MUSIC</a>
+      <a href="/tour" class={clsx('hover:underline', {'underline': pathname === '/tour'})}>TOUR</a>
+    </nav>
+		<slot />
+	</body>
+  <footer class=" pt-6 mt-auto">
+    <div class="py-4 text-red-300 text-center bg-slate-950">
+      Copyright © SOSOSROMEO ~ Website Design by Sebastian Valdivia
+    </div>
+  </footer>
+</html>
+<style is:global>
+	:root {
+		--accent: 136, 58, 234;
+		--accent-light: 224, 204, 250;
+		--accent-dark: 49, 10, 101;
+		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), rgb(var(--accent-light)) 30%, white 60%);
+	}
+	html {
+		font-family: system-ui, sans-serif;
+		background: #13151A;
+		background-size: 224px;
+	}
+	code {
+		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+			Bitstream Vera Sans Mono, Courier New, monospace;
+	}
+</style>

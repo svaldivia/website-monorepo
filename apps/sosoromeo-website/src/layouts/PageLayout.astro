@@ -1,0 +1,18 @@
+---
+import Layout from "./Layout.astro";
+
+type Props = {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<Layout title={title}>
+  <h1 class="pt-20 pb-10 text-6xl font-bold uppercase text-center">{title}</h1>
+  <div class="px-4">
+    <slot />
+  </div>
+</Layout>
+
+
