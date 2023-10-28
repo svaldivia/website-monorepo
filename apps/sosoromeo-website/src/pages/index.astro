@@ -2,9 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import logo from '../images/logo.svg';
-
-const musicVideoIds = ['VO7RCgaWIPc', 'V8sGvsD5g-o', 'PHtWl9hFjBU'];
-
+import { Camera } from 'react-feather';
 ---
 
 <Layout title="Home">
@@ -12,26 +10,5 @@ const musicVideoIds = ['VO7RCgaWIPc', 'V8sGvsD5g-o', 'PHtWl9hFjBU'];
     <section class="flex justify-center h-screen">
       <Image class="w-full" src={logo} alt="SOSOSROMEO Logo" />
     </section>
-    <!-- <section class="flex flex-col items-center">
-      <h1 class="text-4xl text-center py-4 font-bold">OUR MUSIC</h1>
-      <iframe
-        src="https://open.spotify.com/embed/artist/1SmWeenBrsUkSEaz1KSzjG?utm_source=generator"
-        width="560"
-        height="180"
-        frameBorder="0"
-        allowtransparency="true"
-        allow="encrypted-media"
-      />
-      {musicVideoIds.map((id) =>
-        <iframe
-          width="560"
-          height="315"
-          src={`https://www.youtube.com/embed/${id}`}
-          frameBorder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
-      )}
-    </section> -->
-	</main>
+  </main>
 </Layout>
