@@ -2,13 +2,64 @@
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import logo from '../images/logo.svg';
-import { Camera } from 'react-feather';
+import sebImg from '../images/seb.jpg';
+import tylerImg from '../images/tyler.jpg';
+import mikeImg from '../images/mike.jpg';
+import stevieImg from '../images/stevie.jpg';
+import Icon, { IconNames } from '../components/Icon.astro';
+
+const socialNetworkData: Array<{name: IconNames, url: string}> = [
+  {
+    url: 'https://www.instagram.com/sosoromeomusic/',
+    name: 'instagram',
+  },
+  {
+    url: 'https://open.spotify.com/artist/1SmWeenBrsUkSEaz1KSzjG?si=bqvcqb6EQUOchfiZ2TOS2Q',
+    name: 'spotify',
+  },
+  {
+    url: 'https://www.tiktok.com/@sosoromeomusic',
+    name: 'tiktok',
+  },
+  {
+    url: 'https://www.facebook.com/sosoromeomusic/',
+    name: 'facebook',
+  },
+  {
+    url: 'https://youtube.com/@sosoromeomusic?si=VnfiRjieMU94hQAy',
+    name: 'youtube',
+  },
+];
+
 ---
 
 <Layout title="Home">
   <main>
-    <section class="flex justify-center h-screen">
-      <Image class="w-full" src={logo} alt="SOSOSROMEO Logo" />
+    <div class="grid grid-rows-2 grid-flow-col gap-1 absolute inset-0 items-center">
+      <div class="overflow-hidden h-full w-full">
+        <Image class="object-none object-center h-full" width={1000} src={tylerImg} alt="mike" />
+      </div>
+      <div class="overflow-hidden h-full w-full">
+        <Image class="object-none object-center h-full" width={1000} src={stevieImg} alt="mike" />
+      </div>
+      <div class="overflow-hidden h-full w-full">
+        <Image class="object-none object-center h-full" width={1000} src={mikeImg} alt="mike" />
+      </div>
+      <div class="overflow-hidden h-full w-full">
+        <Image class="object-none object-center h-full" width={1000} src={sebImg} alt="mike" />
+      </div>
+    </div>
+    <section class="flex flex-col justify-center h-screen items-center">
+      <Image class="w-full lg:w-[1054px] z-10" src={logo} alt="SOSOSROMEO Logo" />
+      <div class="flex flex-row justify-center gap-2">
+        {socialNetworkData.map(item => {
+          return (
+          <a href={item.url} target="_blank">
+            <Icon icon={item.name} />
+          </a>
+          );
+        })}
+      </div>
     </section>
   </main>
 </Layout>
