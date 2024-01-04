@@ -18,25 +18,38 @@ const { pathname } = Astro.url;
     <meta name="generator" content={Astro.generator} />
     <title>{`SOSOROMEO | ${title}`}</title>
   </head>
-  <body class="text-slate-950 bg-gradient-to-b bg-red-300 flex flex-col min-h-screen">
-    <nav class="fixed top-0 w-full flex justify-center gap-2 sm:gap-5 font-bold text-xl sm:text-3xl py-4 bg-red-300">
+  <body class="bg-gradient-to-b flex flex-col min-h-screen bg-slate-950 text-white">
+    <nav class="fixed top-0 w-full flex justify-center gap-2 sm:gap-5 font-bold text-xl sm:text-3xl py-4 bg-slate-950 z-10">
       <a href="/" class={clsx('hover:underline', { underline: pathname === '/' })}>HOME</a>
-      <a href="/about" class={clsx('hover:underline', { underline: pathname === '/about' })}>ABOUT</a>
+      <!-- <a href="/about" class={clsx('hover:underline', { underline: pathname === '/about' })}>ABOUT</a> -->
       <a href="/music" class={clsx('hover:underline', { underline: pathname === '/music' })}>
         MUSIC
       </a>
-      <a href="/tour" class={clsx('hover:underline', { underline: pathname === '/tour' })}>TOUR</a>
-      <a target="_blank" href="https://drive.google.com/file/d/1q8bQOzeA6tI32WM75moC16BuvmYxuqoy/view?usp=sharing">EPK</a>
+      <!-- <a href="/shows" class={clsx('hover:underline', { underline: pathname === '/tour' })}>SHOWS</a> -->
+      <!-- <a target="_blank" class={clsx('hover:underline', { underline: pathname === '/tour' })} href="https://drive.google.com/file/d/1q8bQOzeA6tI32WM75moC16BuvmYxuqoy/view?usp=sharing">EPK</a> -->
     </nav>
     <slot />
   </body>
-  <footer class="pt-6 mt-auto">
-    <div class="py-4 text-red-300 text-center bg-slate-950">
+  <footer class="pt-1 mt-auto">
+    <div class="p-4 text-center bg-slate-950">
       Copyright © SOSOSROMEO ~ Website Design by Sebastian Valdivia
     </div>
   </footer>
 </html>
 <style is:global>
+ 
+  :root {
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-light)) 30%,
+      white 60%
+    );
+  }
+
   :root {
     --accent: 136, 58, 234;
     --accent-light: 224, 204, 250;

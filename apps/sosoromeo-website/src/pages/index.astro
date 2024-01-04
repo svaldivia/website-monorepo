@@ -1,12 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Image } from 'astro:assets';
-import logo from '../images/logo.svg';
-import sebImg from '../images/seb.jpg';
-import tylerImg from '../images/tyler.jpg';
-import mikeImg from '../images/mike.jpg';
-import stevieImg from '../images/stevie.jpg';
 import Icon, { IconNames } from '../components/Icon.astro';
+import logo from '../images/logo.svg';
+import { Image } from 'astro:assets';
+import HeroImage from '../components/HeroImage.astro';
 
 const socialNetworkData: Array<{name: IconNames, url: string}> = [
   {
@@ -30,28 +27,15 @@ const socialNetworkData: Array<{name: IconNames, url: string}> = [
     name: 'youtube',
   },
 ];
-
 ---
 
 <Layout title="Home">
   <main>
-    <div class="grid grid-rows-2 grid-flow-col gap-1 absolute inset-0 items-center">
-      <div class="overflow-hidden h-full w-full">
-        <Image class="object-none object-center h-full" width={1000} src={tylerImg} alt="mike" />
-      </div>
-      <div class="overflow-hidden h-full w-full">
-        <Image class="object-none object-center h-full" width={1000} src={stevieImg} alt="mike" />
-      </div>
-      <div class="overflow-hidden h-full w-full">
-        <Image class="object-none object-center h-full" width={1000} src={mikeImg} alt="mike" />
-      </div>
-      <div class="overflow-hidden h-full w-full">
-        <Image class="object-none object-center h-full" width={1000} src={sebImg} alt="mike" />
-      </div>
-    </div>
-    <section class="flex flex-col justify-center h-screen items-center">
+    <HeroImage />
+    <section class="flex flex-col justify-center h-screen items-center z-10">
+      <!-- TODO: This image should be thinner -->
       <Image class="w-full lg:w-[1054px] z-10" src={logo} alt="SOSOSROMEO Logo" />
-      <div class="flex flex-row justify-center gap-2">
+      <div class="flex flex-row justify-center gap-2 z-10">
         {socialNetworkData.map(item => {
           return (
           <a href={item.url} target="_blank">

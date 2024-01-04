@@ -1,0 +1,53 @@
+---
+import { Image } from 'astro:assets';
+import sebImg from '../images/seb.jpg';
+import tylerImg from '../images/tyler.jpg';
+import mikeImg from '../images/mike.jpg';
+import stevieImg from '../images/stevie.jpg';
+
+// TODO: maybe optimize this with a react component so it can hydrate correctly
+---
+<div class="grid grid-rows-2 grid-flow-col gap-1 absolute inset-0 top-14 items-center sm:collapse">
+  <div class="overflow-hidden h-full w-full">
+    <Image class="object-none sm:object-center h-full" width={500} src={tylerImg} alt="tyler" />
+  </div>
+  <div class="overflow-hidden h-full w-full">
+    <Image class="object-none object-center h-full" width={500} src={stevieImg} alt="mike" />
+  </div>
+  <div class="overflow-hidden h-full w-full">
+    <Image class="object-none object-center h-full" width={500} src={mikeImg} alt="mike" />
+  </div>
+  <div class="overflow-hidden h-full w-full">
+    <Image class="object-none object-center h-full" width={500} src={sebImg} alt="mike" />
+  </div>
+</div>
+
+<div class="grid grid-rows-2 grid-flow-col gap-1 absolute inset-0 top-14 items-center collapse sm:visible">
+  <div class="overflow-hidden h-full w-full">
+    <Image class="object-none sm:object-center h-full" width={800} src={tylerImg} alt="tyler" />
+  </div>
+  <div class="overflow-hidden h-full w-full">
+    <Image class="object-none object-center h-full" width={800} src={stevieImg} alt="mike" />
+  </div>
+  <div class="overflow-hidden h-full w-full">
+    <Image class="object-none object-center h-full" width={800} src={mikeImg} alt="mike" />
+  </div>
+  <div class="overflow-hidden h-full w-full">
+    <Image class="object-none object-center h-full" width={800} src={sebImg} alt="mike" />
+  </div>
+</div>
+
+<div class="grid grid-rows-2 grid-flow-col gap-1 absolute inset-0 top-14 items-center collapse xl:visible">
+  <div class="overflow-hidden h-full w-full">
+    <Image class="object-none sm:object-center h-full" width={1100} src={tylerImg} alt="tyler" />
+  </div>
+  <div class="overflow-hidden h-full w-full">
+    <Image class="object-none object-center h-full" width={1100} src={stevieImg} alt="mike" />
+  </div>
+  <div class="overflow-hidden h-full w-full">
+    <Image class="object-none object-center h-full" width={1100} src={mikeImg} alt="mike" />
+  </div>
+  <div class="overflow-hidden h-full w-full">
+    <Image class="object-none object-center h-full" width={1100} src={sebImg} alt="mike" />
+  </div>
+</div>
