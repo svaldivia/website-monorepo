@@ -6932,15 +6932,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"todo-monorepo@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "todo-monorepo@workspace:."
-  dependencies:
-    prettier: latest
-    turbo: latest
-  languageName: unknown
-  linkType: soft
-
 "trim-lines@npm:^3.0.0":
   version: 3.0.1
   resolution: "trim-lines@npm:3.0.1"
@@ -7680,6 +7671,15 @@ __metadata:
     tsconfig: "*"
     typescript: ^4.5.3
     ui: "*"
+  languageName: unknown
+  linkType: soft
+
+"website-monorepo@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "website-monorepo@workspace:."
+  dependencies:
+    prettier: latest
+    turbo: latest
   languageName: unknown
   linkType: soft
 
