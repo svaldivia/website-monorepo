@@ -1,5 +1,6 @@
 ---
 import clsx from 'clsx';
+import DocumentHead from '../components/DocumentHead.astro';
 type Props = {
   title: string;
 };
@@ -10,14 +11,7 @@ const { pathname } = Astro.url;
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{`SOSOROMEO | ${title}`}</title>
-  </head>
+  <DocumentHead title={title} />
   <body class="bg-gradient-to-b flex flex-col min-h-screen bg-slate-950 text-white">
     <nav class="fixed top-0 w-full flex justify-center gap-2 sm:gap-5 font-bold text-xl sm:text-3xl py-4 bg-slate-950 z-10">
       <a href="/" class={clsx('hover:underline', { underline: pathname === '/' })}>HOME</a>
