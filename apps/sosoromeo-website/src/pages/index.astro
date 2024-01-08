@@ -1,14 +1,49 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Image } from 'astro:assets';
+import Icon, { IconNames } from '../components/Icon.astro';
 import logo from '../images/logo.svg';
-import { Camera } from 'react-feather';
+import { Image } from 'astro:assets';
+import HeroImage from '../components/HeroImage.astro';
+
+const socialNetworkData: Array<{name: IconNames, url: string}> = [
+  {
+    url: 'https://www.instagram.com/sosoromeomusic/',
+    name: 'instagram',
+  },
+  {
+    url: 'https://open.spotify.com/artist/1SmWeenBrsUkSEaz1KSzjG?si=bqvcqb6EQUOchfiZ2TOS2Q',
+    name: 'spotify',
+  },
+  {
+    url: 'https://www.tiktok.com/@sosoromeomusic',
+    name: 'tiktok',
+  },
+  {
+    url: 'https://www.facebook.com/sosoromeomusic/',
+    name: 'facebook',
+  },
+  {
+    url: 'https://youtube.com/@sosoromeomusic?si=VnfiRjieMU94hQAy',
+    name: 'youtube',
+  },
+];
 ---
 
 <Layout title="Home">
   <main>
-    <section class="flex justify-center h-screen">
-      <Image class="w-full" src={logo} alt="SOSOSROMEO Logo" />
+    <HeroImage />
+    <section class="flex flex-col justify-center h-screen items-center z-10">
+      <!-- TODO: This image should be thinner -->
+      <Image class="w-full lg:w-[1054px] z-10" src={logo} alt="SOSOSROMEO Logo" />
+      <div class="flex flex-row justify-center gap-2 z-10">
+        {socialNetworkData.map(item => {
+          return (
+          <a href={item.url} target="_blank">
+            <Icon icon={item.name} />
+          </a>
+          );
+        })}
+      </div>
     </section>
   </main>
 </Layout>

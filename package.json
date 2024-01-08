@@ -1,6 +1,6 @@
 {
-  "name": "todo-monorepo",
-  "version": "0.0.0",
+  "name": "website-monorepo",
+  "version": "0.0.1",
   "private": true,
   "workspaces": [
     "apps/*",
