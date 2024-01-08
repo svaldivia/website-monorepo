@@ -1,7 +1,10 @@
 ---
-import logo from '../images/tyler.jpg';
+import metaImage from '../images/tyler.jpg';
 
 const { title } = Astro.props;
+
+const metaImageUrl = `${Astro.url.origin}${metaImage.src}`;
+console.log(metaImageUrl);
 ---
 
 <head>
@@ -16,7 +19,7 @@ const { title } = Astro.props;
     property="description"
     content="Vancouver 4 piece indie vibe rock band"
   />
-  <meta property="image" content={logo.src} />
+  <meta property="image" content={metaImageUrl} />
 
   {/* <!-- Schema.org for Google --> */}
   <meta itemprop="name" content="SOSOROMEO" />
@@ -24,7 +27,7 @@ const { title } = Astro.props;
     itemprop="description"
     content="Vancouver 4 piece indie vibe rock band"
   />
-  <meta itemprop="image" content={logo.src} />
+  <meta itemprop="image" content={metaImageUrl} />
 
   {/* <!-- Twitter --> */}
   <meta property="twitter:card" content="summary" />
@@ -34,7 +37,7 @@ const { title } = Astro.props;
     content="Vancouver 4 piece indie vibe rock band"
   />
   <meta property="twitter:site" content="@gnarfunkelband" />
-  <meta property="twitter:image:src" content={logo.src} />
+  <meta property="twitter:image:src" content={metaImageUrl} />
 
   {/* <!-- Open Graph general (Facebook, Pinterest & Google+) --> */}
   <meta property="og:title" content="SOSOROMEO" />
@@ -42,10 +45,10 @@ const { title } = Astro.props;
     property="og:description"
     content="Vancouver 4 piece indie vibe rock band"
   />
-  <meta property="og:image" content={logo.src} />
+  <meta property="og:image" content={metaImageUrl} />
   <meta
     property="og:image:secure_url"
-    content={logo.src}
+    content={metaImageUrl}
   />
   <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:width" content="1080" />
